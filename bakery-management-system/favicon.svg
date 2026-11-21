@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Crumb &amp; Co.">
-  <rect width="64" height="64" rx="16" fill="#d99a75"/>
-  <path d="M32 14c-2.6 0-4.6 1.6-5.2 3.8-4.6.8-8 4.2-8 9v2.2h26.4V26.8c0-4.8-3.4-8.2-8-9C36.6 15.6 34.6 14 32 14z" fill="#2b211c"/>
-  <path d="M16 32h32v3.5c0 5.5-3.2 9.7-8 11.2v3.3H24v-3.3c-4.8-1.5-8-5.700-8-11.200V32z" fill="#2b211c"/>
-</svg>
