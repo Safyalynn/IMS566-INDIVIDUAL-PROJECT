@@ -1,0 +1,426 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dashboard | Crumb &amp; Co.</title>
+
+  <meta name="description" content="Crumb &amp; Co. bakery dashboard: sales trends, best-selling products, recent orders and low-stock alerts.">
+  <meta name="author" content="Crumb &amp; Co. Bakery Management System (IMS566 individual project)">
+  <meta name="keywords" content="bakery, management system, orders, products, customers, dashboard">
+  <meta name="theme-color" content="#242321">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body data-page="dashboard">
+
+
+  <!-- SIDEBAR NAVIGATION -->
+  <div id="app-shell"></div>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+
+    <!-- PAGE HEADER -->
+    <header class="page-heading">
+
+      <div>
+
+        <p class="eyebrow">OVERVIEW</p>
+
+        <h1>Dashboard</h1>
+
+        <p class="muted mb-0">
+          Welcome back. Here's what's happening at your bakery today.
+        </p>
+
+      </div>
+
+
+      <!-- DATE AND NEW ORDER BUTTON -->
+      <div class="heading-actions">
+
+        <!-- date -->
+        <span class="date-chip">
+          <i class="bi bi-calendar3"></i>
+          <span id="today-date"></span>
+        </span>
+
+        <a class="btn btn-dark" href="orders.html">
+          <i class="bi bi-plus-lg me-2"></i>New order
+        </a>
+
+      </div>
+
+    </header>
+
+
+    <!-- BUSINESS SUMMARY / STATISTICS CARDS -->
+    <section class="row g-3 mb-4" aria-label="Business summary">
+
+
+      <!-- TOTAL SALES -->
+      <div class="col-12 col-sm-6 col-xl-3">
+
+        <article class="stat-card">
+
+          <div class="stat-top">
+            <span>Total sales</span>
+            <span class="stat-icon peach">
+              <i class="bi bi-currency-dollar"></i>
+            </span>
+          </div>
+
+          <!-- Jumlah jualan -->
+          <h2 id="sales-total">RM 0.00</h2>
+
+          <p class="stat-note">
+            <span class="positive">
+              <i class="bi bi-arrow-up-right"></i> Live
+            </span>
+            <span>from recorded orders</span>
+          </p>
+
+        </article>
+      </div>
+
+
+      <!-- ORDERS TODAY -->
+      <div class="col-12 col-sm-6 col-xl-3">
+
+        <article class="stat-card">
+
+          <div class="stat-top">
+            <span>Orders today</span>
+
+            <span class="stat-icon lavender">
+              <i class="bi bi-receipt"></i>
+            </span>
+          </div>
+
+          <h2 id="orders-today">0</h2>
+
+          <p class="stat-note">Orders recorded today</p>
+
+        </article>
+      </div>
+
+
+      <!-- PRODUCTS -->
+      <div class="col-12 col-sm-6 col-xl-3">
+
+        <article class="stat-card">
+
+          <div class="stat-top">
+            <span>Products</span>
+
+            <span class="stat-icon mint">
+              <i class="bi bi-basket2"></i>
+            </span>
+          </div>
+
+          <!-- products count -->
+          <h2 id="product-count">0</h2>
+
+          <p class="stat-note">Available menu items</p>
+
+        </article>
+      </div>
+
+
+      <!-- PENDING ORDERS -->
+      <div class="col-12 col-sm-6 col-xl-3">
+
+        <article class="stat-card">
+
+          <div class="stat-top">
+            <span>Pending orders</span>
+
+            <span class="stat-icon butter">
+              <i class="bi bi-hourglass-split"></i>
+            </span>
+          </div>
+
+          <h2 id="pending-count">0</h2>
+
+          <p class="stat-note">Awaiting completion</p>
+
+        </article>
+      </div>
+
+    </section>
+
+
+    <!-- CHARTS / DATA VISUALIZATION -->
+    <section class="row g-3 mb-4" aria-label="Charts">
+
+
+      <!-- SALES PERFORMANCE -->
+      <div class="col-12 col-xl-8">
+
+        <article class="panel h-100">
+
+          <div class="panel-heading">
+
+            <div>
+              <h2 id="chart-title">Sales performance</h2>
+              <p id="chart-subtitle">Recorded order value by month</p>
+            </div>
+
+          </div>
+
+          <div class="chart-controls">
+
+            <div class="seg" role="group" aria-label="Chart metric">
+
+              <button
+                type="button"
+                class="seg-btn active"
+                data-metric="sales"
+                aria-pressed="true">
+                Sales (RM)
+              </button>
+
+              <button
+                type="button"
+                class="seg-btn"
+                data-metric="orders"
+                aria-pressed="false">
+                Orders
+              </button>
+
+            </div>
+
+
+            <div class="seg" role="group" aria-label="Time range">
+
+              <button
+                type="button"
+                class="seg-btn active"
+                data-range="months"
+                aria-pressed="true">
+                6 months
+              </button>
+
+              <button
+                type="button"
+                class="seg-btn"
+                data-range="days"
+                aria-pressed="false">
+                7 days
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div class="chart-wrap">
+            <canvas
+              id="salesChart"
+              role="img"
+              aria-label="Bar chart of sales or orders over time">
+            </canvas>
+          </div>
+
+        </article>
+      </div>
+
+
+      <!-- BEST-SELLING PRODUCTS -->
+      <div class="col-12 col-xl-4">
+
+        <article class="panel h-100">
+
+          <div class="panel-heading">
+            <div>
+              <h2>Best-selling products</h2>
+              <p>Units sold, from recorded orders</p>
+            </div>
+          </div>
+
+
+          <!-- DOUGHNUT CHART -->
+          <div class="chart-wrap doughnut-wrap">
+            <canvas
+              id="productChart"
+              role="img"
+              aria-label="Doughnut chart of best-selling products">
+            </canvas>
+          </div>
+
+          <div id="product-legend" class="chart-legend"></div>
+
+        </article>
+      </div>
+
+    </section>
+
+
+    <!-- RECENT ORDERS AND LOW STOCK -->
+    <section class="row g-3" aria-label="Orders and stock">
+
+
+      <div class="col-12 col-xl-8">
+
+        <article class="panel h-100">
+
+          <div class="panel-heading">
+
+            <div>
+              <h2>Recent orders</h2>
+              <p>Latest customer purchases</p>
+            </div>
+
+            <a class="text-link" href="orders.html">
+              View all orders <i class="bi bi-arrow-right"></i>
+            </a>
+
+          </div>
+
+
+          <!-- ORDER INFORMATION -->
+          <div class="table-responsive">
+
+            <table class="table align-middle data-table">
+
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer</th>
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+
+              <tbody id="recent-orders"></tbody>
+
+            </table>
+
+          </div>
+
+        </article>
+      </div>
+
+
+      <!-- LOW STOCK ALERT -->
+      <div class="col-12 col-xl-4">
+
+        <article class="panel h-100">
+
+          <div class="panel-heading">
+
+            <div>
+              <h2>Low stock</h2>
+              <p>Items with 10 or fewer left</p>
+            </div>
+
+            <a class="text-link" href="products.html">
+              Manage <i class="bi bi-arrow-right"></i>
+            </a>
+
+          </div>
+
+
+          <!-- LOW STOCK LIST -->
+          <ul class="lowstock-list" id="low-stock"></ul>
+
+        </article>
+      </div>
+
+    </section>
+
+
+    <footer class="footer-pro">
+
+      <div class="footer-grid">
+
+
+        <div>
+          <a href="index.html" class="brand brand-dark text-decoration-none">
+
+            <span class="brand-mark">
+              <i class="bi bi-cake2"></i>
+            </span>
+
+            <span>crumb <b>&amp; co.</b></span>
+
+          </a>
+
+          <p>
+            A calmer way to manage your bakery:
+            products, orders and customers in one workspace.
+          </p>
+
+        </div>
+
+
+        <nav aria-label="Footer quick links">
+
+          <h2>Quick links</h2>
+          <ul class="footer-links">
+
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="orders.html">Orders</a></li>
+            <li><a href="customers.html">Customers</a></li>
+
+          </ul>
+
+        </nav>
+
+
+        <div>
+
+          <h2>About this project</h2>
+          <p>
+            Education purpose:
+            Advanced Web Design Development and Content Management (IMS566)
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          &copy; <span class="year"></span>
+          Crumb &amp; Co. Bakery Management System
+        </span>
+
+      </div>
+
+    </footer>
+
+  </main>
+
+  <!-- JAVASCRIPT FILES -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+  <script src="js/app.js"></script>
+
+  <script src="js/dashboard.js"></script>
+
+</body>
+</html>
