@@ -19,19 +19,69 @@
   const initialUsers = [
     { username: "aisha", password: "aisha000", role: "customer", name: "Aisha Rahman", email: "aisha.rahman@example.com", phone: "012-345 6789" }
   ];
-  const initialProducts = [
-    { id: 1, name: "Butter Croissant", category: "Pastry", price: 7.5, stock: 32 },
-    { id: 2, name: "Sourdough Loaf", category: "Bread", price: 14, stock: 18 },
-    { id: 3, name: "Chocolate Fudge Cake", category: "Cake", price: 95, stock: 7 },
-    { id: 4, name: "Almond Danish", category: "Pastry", price: 8.5, stock: 24 },
-    { id: 5, name: "Sea Salt Cookies", category: "Cookies", price: 5, stock: 4 },
-    { id: 6, name: "Iced Latte", category: "Drinks", price: 11, stock: 40 }
+const products = [
+  // =========================
+  // ORIGINAL PRODUCTS
+  // =========================
+  { id: 1, name: "Butter Croissant", category: "Pastry", price: 7.5, stock: 32 },
+  { id: 2, name: "Sourdough Loaf", category: "Bread", price: 14, stock: 18 },
+  { id: 3, name: "Chocolate Fudge Cake", category: "Cake", price: 95, stock: 7 },
+  { id: 4, name: "Almond Danish", category: "Pastry", price: 8.5, stock: 24 },
+  { id: 5, name: "Sea Salt Cookies", category: "Cookies", price: 5, stock: 4 },
+  { id: 6, name: "Iced Latte", category: "Drinks", price: 11, stock: 40 },
+
+  // =========================
+  // PASTRY
+  // =========================
+  { id: 7, name: "Chocolate Croissant", category: "Pastry", price: 8, stock: 30 },
+  { id: 8, name: "Blueberry Danish", category: "Pastry", price: 8, stock: 25 },
+  { id: 9, name: "Apple Turnover", category: "Pastry", price: 7, stock: 25 },
+  { id: 10, name: "Pain au Chocolat", category: "Pastry", price: 8.5, stock: 20 },
+
+  // =========================
+  // BREAD
+  // =========================
+  { id: 11, name: "Garlic Bread", category: "Bread", price: 8, stock: 30 },
+  { id: 12, name: "Chocolate Bun", category: "Bread", price: 5.5, stock: 35 },
+  { id: 13, name: "Soft Milk Bun", category: "Bread", price: 5, stock: 35 },
+  { id: 14, name: "Cheese Bun", category: "Bread", price: 6, stock: 30 },
+  { id: 15, name: "Wholemeal Bread", category: "Bread", price: 9, stock: 20 },
+
+  // =========================
+  // CAKE
+  // =========================
+  { id: 16, name: "Red Velvet Cake", category: "Cake", price: 90, stock: 8 },
+  { id: 17, name: "New York Cheesecake", category: "Cake", price: 100, stock: 6 },
+  { id: 18, name: "Strawberry Shortcake", category: "Cake", price: 95, stock: 8 },
+  { id: 19, name: "Carrot Cake", category: "Cake", price: 85, stock: 10 },
+  { id: 20, name: "Chocolate Cupcake", category: "Cake", price: 8, stock: 25 },
+
+  // =========================
+  // COOKIES
+  // =========================
+  { id: 21, name: "Chocolate Chip Cookies", category: "Cookies", price: 5.5, stock: 35 },
+  { id: 22, name: "Double Chocolate Cookies", category: "Cookies", price: 6, stock: 30 },
+  { id: 23, name: "Red Velvet Cookies", category: "Cookies", price: 6, stock: 30 },
+  { id: 24, name: "Matcha Cookies", category: "Cookies", price: 6.5, stock: 25 },
+  { id: 25, name: "Oatmeal Raisin Cookies", category: "Cookies", price: 5.5, stock: 30 },
+
+  // =========================
+  // DRINKS
+  // =========================
+  { id: 26, name: "Iced Americano", category: "Drinks", price: 8, stock: 40 },
+  { id: 27, name: "Hot Cappuccino", category: "Drinks", price: 10, stock: 35 },
+  { id: 28, name: "Iced Chocolate", category: "Drinks", price: 10, stock: 35 },
+  { id: 29, name: "Matcha Latte", category: "Drinks", price: 12, stock: 30 },
+  { id: 30, name: "Strawberry Smoothie", category: "Drinks", price: 12, stock: 25 },
+  { id: 31, name: "Hot Chocolate", category: "Drinks", price: 9, stock: 35 }
   ];
   const initialCustomers = [
-    { id: 1, name: "Aisha Rahman", email: "aisha.rahman@example.com", phone: "012-345 6789" },
-    { id: 2, name: "Daniel Lee", email: "daniel.lee@example.com", phone: "013-456 7890" },
-    { id: 3, name: "Nur Iman", email: "nur.iman@example.com", phone: "014-567 8901" },
-    { id: 4, name: "Jason Tan", email: "jason.tan@example.com", phone: "016-678 9012" }
+    { id: 1, name: "Aisha Rahman", email: "aisha.rahman@gmail.com", phone: "012-345 6789" },
+    { id: 2, name: "Daniel Lee", email: "daniel@gmail.com", phone: "013-456 7890" },
+    { id: 3, name: "Nur Iman", email: "nur.iman@gmail.com", phone: "014-567 8901" },
+    { id: 4, name: "Jason Tan", email: "jason.tan@gmail.com", phone: "016-678 9012" }
+    { id: 5, name: "Noru Saidah", email: "saidah@gmail.com", phone: "011-764 3345" }
+    { id: 6, name: "Safia Amalin", email: "sfamalin@gmail.com", phone: "019-736 5564" }
   ];
 
   // date today".
