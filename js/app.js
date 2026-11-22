@@ -13,78 +13,80 @@
 
   const SEED_VERSION = "2";
 
-  const ADMIN_ACCOUNT = { username: "admin", password: "admin1122", role: "admin", name: "Bakery Admin" };
+  const ADMIN_ACCOUNT = {
+    username: "admin",
+    password: "admin1122",
+    role: "admin",
+    name: "Bakery Admin"
+  };
 
-  /*  Sample data  */
+  /* Sample data */
   const initialUsers = [
-    { username: "aisha", password: "aisha000", role: "customer", name: "Aisha Rahman", email: "aisha.rahman@example.com", phone: "012-345 6789" }
+    {
+      username: "aisha",
+      password: "aisha000",
+      role: "customer",
+      name: "Aisha Rahman",
+      email: "aisha.rahman@example.com",
+      phone: "012-345 6789"
+    }
   ];
-const products = [
-  // =========================
-  // ORIGINAL PRODUCTS
-  // =========================
-  { id: 1, name: "Butter Croissant", category: "Pastry", price: 7.5, stock: 32 },
-  { id: 2, name: "Sourdough Loaf", category: "Bread", price: 14, stock: 18 },
-  { id: 3, name: "Chocolate Fudge Cake", category: "Cake", price: 95, stock: 7 },
-  { id: 4, name: "Almond Danish", category: "Pastry", price: 8.5, stock: 24 },
-  { id: 5, name: "Sea Salt Cookies", category: "Cookies", price: 5, stock: 4 },
-  { id: 6, name: "Iced Latte", category: "Drinks", price: 11, stock: 40 },
 
-  // =========================
-  // PASTRY
-  // =========================
-  { id: 7, name: "Chocolate Croissant", category: "Pastry", price: 8, stock: 30 },
-  { id: 8, name: "Blueberry Danish", category: "Pastry", price: 8, stock: 25 },
-  { id: 9, name: "Apple Turnover", category: "Pastry", price: 7, stock: 25 },
-  { id: 10, name: "Pain au Chocolat", category: "Pastry", price: 8.5, stock: 20 },
+  const initialProducts = [
+    // ORIGINAL PRODUCTS
+    { id: 1, name: "Butter Croissant", category: "Pastry", price: 7.5, stock: 32 },
+    { id: 2, name: "Sourdough Loaf", category: "Bread", price: 14, stock: 18 },
+    { id: 3, name: "Chocolate Fudge Cake", category: "Cake", price: 95, stock: 7 },
+    { id: 4, name: "Almond Danish", category: "Pastry", price: 8.5, stock: 24 },
+    { id: 5, name: "Sea Salt Cookies", category: "Cookies", price: 5, stock: 4 },
+    { id: 6, name: "Iced Latte", category: "Drinks", price: 11, stock: 40 },
 
-  // =========================
-  // BREAD
-  // =========================
-  { id: 11, name: "Garlic Bread", category: "Bread", price: 8, stock: 30 },
-  { id: 12, name: "Chocolate Bun", category: "Bread", price: 5.5, stock: 35 },
-  { id: 13, name: "Soft Milk Bun", category: "Bread", price: 5, stock: 35 },
-  { id: 14, name: "Cheese Bun", category: "Bread", price: 6, stock: 30 },
-  { id: 15, name: "Wholemeal Bread", category: "Bread", price: 9, stock: 20 },
+    // PASTRY
+    { id: 7, name: "Chocolate Croissant", category: "Pastry", price: 8, stock: 30 },
+    { id: 8, name: "Blueberry Danish", category: "Pastry", price: 8, stock: 25 },
+    { id: 9, name: "Apple Turnover", category: "Pastry", price: 7, stock: 25 },
+    { id: 10, name: "Pain au Chocolat", category: "Pastry", price: 8.5, stock: 20 },
 
-  // =========================
-  // CAKE
-  // =========================
-  { id: 16, name: "Red Velvet Cake", category: "Cake", price: 90, stock: 8 },
-  { id: 17, name: "New York Cheesecake", category: "Cake", price: 100, stock: 6 },
-  { id: 18, name: "Strawberry Shortcake", category: "Cake", price: 95, stock: 8 },
-  { id: 19, name: "Carrot Cake", category: "Cake", price: 85, stock: 10 },
-  { id: 20, name: "Chocolate Cupcake", category: "Cake", price: 8, stock: 25 },
+    // BREAD
+    { id: 11, name: "Garlic Bread", category: "Bread", price: 8, stock: 30 },
+    { id: 12, name: "Chocolate Bun", category: "Bread", price: 5.5, stock: 35 },
+    { id: 13, name: "Soft Milk Bun", category: "Bread", price: 5, stock: 35 },
+    { id: 14, name: "Cheese Bun", category: "Bread", price: 6, stock: 30 },
+    { id: 15, name: "Wholemeal Bread", category: "Bread", price: 9, stock: 20 },
 
-  // =========================
-  // COOKIES
-  // =========================
-  { id: 21, name: "Chocolate Chip Cookies", category: "Cookies", price: 5.5, stock: 35 },
-  { id: 22, name: "Double Chocolate Cookies", category: "Cookies", price: 6, stock: 30 },
-  { id: 23, name: "Red Velvet Cookies", category: "Cookies", price: 6, stock: 30 },
-  { id: 24, name: "Matcha Cookies", category: "Cookies", price: 6.5, stock: 25 },
-  { id: 25, name: "Oatmeal Raisin Cookies", category: "Cookies", price: 5.5, stock: 30 },
+    // CAKE
+    { id: 16, name: "Red Velvet Cake", category: "Cake", price: 90, stock: 8 },
+    { id: 17, name: "New York Cheesecake", category: "Cake", price: 100, stock: 6 },
+    { id: 18, name: "Strawberry Shortcake", category: "Cake", price: 95, stock: 8 },
+    { id: 19, name: "Carrot Cake", category: "Cake", price: 85, stock: 10 },
+    { id: 20, name: "Chocolate Cupcake", category: "Cake", price: 8, stock: 25 },
 
-  // =========================
-  // DRINKS
-  // =========================
-  { id: 26, name: "Iced Americano", category: "Drinks", price: 8, stock: 40 },
-  { id: 27, name: "Hot Cappuccino", category: "Drinks", price: 10, stock: 35 },
-  { id: 28, name: "Iced Chocolate", category: "Drinks", price: 10, stock: 35 },
-  { id: 29, name: "Matcha Latte", category: "Drinks", price: 12, stock: 30 },
-  { id: 30, name: "Strawberry Smoothie", category: "Drinks", price: 12, stock: 25 },
-  { id: 31, name: "Hot Chocolate", category: "Drinks", price: 9, stock: 35 }
+    // COOKIES
+    { id: 21, name: "Chocolate Chip Cookies", category: "Cookies", price: 5.5, stock: 35 },
+    { id: 22, name: "Double Chocolate Cookies", category: "Cookies", price: 6, stock: 30 },
+    { id: 23, name: "Red Velvet Cookies", category: "Cookies", price: 6, stock: 30 },
+    { id: 24, name: "Matcha Cookies", category: "Cookies", price: 6.5, stock: 25 },
+    { id: 25, name: "Oatmeal Raisin Cookies", category: "Cookies", price: 5.5, stock: 30 },
+
+    // DRINKS
+    { id: 26, name: "Iced Americano", category: "Drinks", price: 8, stock: 40 },
+    { id: 27, name: "Hot Cappuccino", category: "Drinks", price: 10, stock: 35 },
+    { id: 28, name: "Iced Chocolate", category: "Drinks", price: 10, stock: 35 },
+    { id: 29, name: "Matcha Latte", category: "Drinks", price: 12, stock: 30 },
+    { id: 30, name: "Strawberry Smoothie", category: "Drinks", price: 12, stock: 25 },
+    { id: 31, name: "Hot Chocolate", category: "Drinks", price: 9, stock: 35 }
   ];
+
   const initialCustomers = [
     { id: 1, name: "Aisha Rahman", email: "aisha.rahman@gmail.com", phone: "012-345 6789" },
     { id: 2, name: "Daniel Lee", email: "daniel@gmail.com", phone: "013-456 7890" },
     { id: 3, name: "Nur Iman", email: "nur.iman@gmail.com", phone: "014-567 8901" },
-    { id: 4, name: "Jason Tan", email: "jason.tan@gmail.com", phone: "016-678 9012" }
-    { id: 5, name: "Noru Saidah", email: "saidah@gmail.com", phone: "011-764 3345" }
+    { id: 4, name: "Jason Tan", email: "jason.tan@gmail.com", phone: "016-678 9012" },
+    { id: 5, name: "Noru Saidah", email: "saidah@gmail.com", phone: "011-764 3345" },
     { id: 6, name: "Safia Amalin", email: "sfamalin@gmail.com", phone: "019-736 5564" }
   ];
 
-  // date today".
+  // Get today's date and calculate previous dates
   const dateOffset = days => {
     const d = new Date();
     d.setDate(d.getDate() - days);
@@ -99,7 +101,6 @@ const products = [
     { id: "CC-1005", customer: "Aisha Rahman", product: "Almond Danish", quantity: 5, total: 42.5, date: dateOffset(3), status: "Completed" }
   ];
 
-
   function buildHistoricalOrders() {
     const orders = [];
     const now = new Date();
@@ -107,20 +108,26 @@ const products = [
 
     const productMix = [0, 5, 1, 3, 0, 4, 5, 1, 3, 0, 5, 4, 1, 2];
     let counter = 100;
+
     for (let monthsAgo = 5; monthsAgo >= 0; monthsAgo--) {
       let days = dayPattern;
       let count = 6 + (5 - monthsAgo) * 2;
-      if (monthsAgo === 0) {
 
+      if (monthsAgo === 0) {
         days = dayPattern.filter(d => d <= now.getUTCDate() - 4);
         count = Math.min(days.length, 8);
       }
+
       for (let i = 0; i < count; i++) {
         const product = initialProducts[productMix[i % productMix.length]];
         const customer = initialCustomers[(i + monthsAgo) % initialCustomers.length];
         const quantity = 1 + (i % 3);
-        const date = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - monthsAgo, days[i % days.length]));
+        const date = new Date(
+          Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - monthsAgo, days[i % days.length])
+        );
+
         counter++;
+
         orders.push({
           id: "CC-" + String(counter).padStart(4, "0"),
           customer: customer.name,
@@ -132,6 +139,7 @@ const products = [
         });
       }
     }
+
     return orders;
   }
 
@@ -143,39 +151,83 @@ const products = [
       return fallback;
     }
   }
+
   function write(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
   }
 
+  // Add new products without deleting existing saved products
+  function syncInitialProducts() {
+    const savedProducts = read(KEYS.products, []);
+    const existingIds = new Set(savedProducts.map(p => p.id));
+
+    const newProducts = initialProducts.filter(
+      p => !existingIds.has(p.id)
+    );
+
+    if (newProducts.length > 0) {
+      write(KEYS.products, [...savedProducts, ...newProducts]);
+    }
+  }
+
   function seed() {
-    if (!localStorage.getItem(KEYS.products)) write(KEYS.products, initialProducts);
-    if (!localStorage.getItem(KEYS.orders)) write(KEYS.orders, initialOrders);
-    if (!localStorage.getItem(KEYS.customers)) write(KEYS.customers, initialCustomers);
-    if (!localStorage.getItem(KEYS.users)) write(KEYS.users, initialUsers);
+    if (!localStorage.getItem(KEYS.products)) {
+      write(KEYS.products, initialProducts);
+    } else {
+      syncInitialProducts();
+    }
+
+    if (!localStorage.getItem(KEYS.orders)) {
+      write(KEYS.orders, initialOrders);
+    }
+
+    if (!localStorage.getItem(KEYS.customers)) {
+      write(KEYS.customers, initialCustomers);
+    }
+
+    if (!localStorage.getItem(KEYS.users)) {
+      write(KEYS.users, initialUsers);
+    }
+
     migrateDemoCustomer();
     addHistoricalOrders();
   }
 
   function addHistoricalOrders() {
     if (localStorage.getItem(KEYS.seedVersion) === SEED_VERSION) return;
+
     const orders = read(KEYS.orders, []);
     const known = new Set(orders.map(o => o.id));
-    buildHistoricalOrders().forEach(o => { if (!known.has(o.id)) orders.push(o); });
+
+    buildHistoricalOrders().forEach(o => {
+      if (!known.has(o.id)) orders.push(o);
+    });
+
     write(KEYS.orders, orders);
     write(KEYS.seedVersion, SEED_VERSION);
   }
 
   function migrateDemoCustomer() {
     const users = read(KEYS.users, []);
-    const legacy = users.find(u => u.username === "customer" && u.password === "customer123");
+    const legacy = users.find(
+      u => u.username === "customer" && u.password === "customer123"
+    );
+
     if (!legacy || users.some(u => u.username.toLowerCase() === "aisha")) return;
+
     legacy.username = "aisha";
     legacy.password = "aisha000";
     write(KEYS.users, users);
+
     const orders = read(KEYS.orders, []);
-    orders.forEach(o => { if (o.username === "customer") o.username = "aisha"; });
+    orders.forEach(o => {
+      if (o.username === "customer") o.username = "aisha";
+    });
+
     write(KEYS.orders, orders);
+
     const session = read(KEYS.session, null);
+
     if (session && session.username === "customer") {
       session.username = "aisha";
       write(KEYS.session, session);
@@ -185,33 +237,49 @@ const products = [
   function money(value) {
     return "RM " + Number(value || 0).toFixed(2);
   }
+
   function escapeHTML(value) {
-    return String(value ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    return String(value ?? "").replace(/[&<>"']/g, c => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    }[c]));
   }
+
   function statusClass(status) {
     return "status-" + String(status).toLowerCase();
   }
 
-
   function getSession() {
     const session = read(KEYS.session, null);
-    if (session && (session.role === "admin" || session.role === "customer")) return session;
+
+    if (session && (session.role === "admin" || session.role === "customer")) {
+      return session;
+    }
+
     if (session) localStorage.removeItem(KEYS.session);
+
     return null;
   }
 
   function requireAuth(requiredRole) {
     const session = getSession();
+
     if (!session) {
       location.replace("login.html");
       return false;
     }
+
     if (session.role !== requiredRole) {
       location.replace(session.role === "admin" ? "index.html" : "shop.html");
       return false;
     }
+
     return true;
   }
+
   function signOut() {
     localStorage.removeItem(KEYS.session);
     location.href = "login.html";
@@ -220,70 +288,108 @@ const products = [
   function renderShell() {
     const host = document.getElementById("app-shell");
     if (!host) return;
+
     const page = document.body.dataset.page;
     const session = getSession();
+
     const links = [
       ["dashboard", "index.html", "bi-grid-1x2", "Dashboard"],
       ["products", "products.html", "bi-basket2", "Products"],
       ["orders", "orders.html", "bi-receipt", "Orders"],
       ["customers", "customers.html", "bi-people", "Customers"]
     ];
+
     const navLinks = links.map(([id, url, icon, label]) =>
       `<a href="${url}" class="${page === id ? "active" : ""}" ${page === id ? 'aria-current="page"' : ""}><i class="bi ${icon}"></i>${label}</a>`
     ).join("");
+
     const displayName = session && session.name || "Bakery Admin";
 
     host.innerHTML = `<aside class="sidebar" id="sidebar">
       <div class="sidebar-top">
-        <a href="index.html" class="brand brand-light text-decoration-none"><span class="brand-mark"><i class="bi bi-cake2"></i></span><span>crumb <b>& co.</b></span></a>
-        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="sidebar-menu"><i class="bi bi-list"></i></button>
+        <a href="index.html" class="brand brand-light text-decoration-none">
+          <span class="brand-mark"><i class="bi bi-cake2"></i></span>
+          <span>crumb <b>& co.</b></span>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="sidebar-menu">
+          <i class="bi bi-list"></i>
+        </button>
       </div>
       <div class="sidebar-menu" id="sidebar-menu">
         <p class="side-label">WORKSPACE</p>
         <nav class="side-nav" aria-label="Main navigation">${navLinks}</nav>
         <div class="sidebar-bottom">
-          <div class="profile-row"><div class="avatar">${escapeHTML(displayName.charAt(0).toUpperCase())}</div><div><div class="profile-name">${escapeHTML(displayName)}</div><div class="profile-role">Admin / Staff</div></div></div>
-          <button class="logout-link" id="logout-btn" type="button"><i class="bi bi-box-arrow-left me-2"></i>Sign out</button>
+          <div class="profile-row">
+            <div class="avatar">${escapeHTML(displayName.charAt(0).toUpperCase())}</div>
+            <div>
+              <div class="profile-name">${escapeHTML(displayName)}</div>
+              <div class="profile-role">Admin / Staff</div>
+            </div>
+          </div>
+          <button class="logout-link" id="logout-btn" type="button">
+            <i class="bi bi-box-arrow-left me-2"></i>Sign out
+          </button>
         </div>
       </div>
     </aside>`;
 
     document.getElementById("logout-btn").addEventListener("click", signOut);
+
     const sidebar = document.getElementById("sidebar");
     const toggle = document.getElementById("nav-toggle");
+
     toggle.addEventListener("click", () => {
       const open = sidebar.classList.toggle("open");
       toggle.setAttribute("aria-expanded", String(open));
-      toggle.innerHTML = open ? '<i class="bi bi-x-lg"></i>' : '<i class="bi bi-list"></i>';
+      toggle.innerHTML = open
+        ? '<i class="bi bi-x-lg"></i>'
+        : '<i class="bi bi-list"></i>';
     });
   }
 
   function setYears() {
-    document.querySelectorAll(".year").forEach(el => el.textContent = new Date().getFullYear());
+    document.querySelectorAll(".year").forEach(el => {
+      el.textContent = new Date().getFullYear();
+    });
   }
 
   /* ---------- Start-up ---------- */
   seed();
+
   if (document.body.dataset.page) {
     if (requireAuth("admin")) renderShell();
   } else if (document.body.dataset.role === "customer") {
     requireAuth("customer");
   }
+
   setYears();
 
   /* ---------- Public API ---------- */
   window.Bakery = {
     keys: KEYS,
     adminAccount: ADMIN_ACCOUNT,
-    signOut, read, write, money, escapeHTML, statusClass, getSession,
+    signOut,
+    read,
+    write,
+    money,
+    escapeHTML,
+    statusClass,
+    getSession,
+
     getProducts: () => read(KEYS.products, []),
     saveProducts: value => write(KEYS.products, value),
+
     getOrders: () => read(KEYS.orders, []),
     saveOrders: value => write(KEYS.orders, value),
+
     getUsers: () => read(KEYS.users, []),
     saveUsers: value => write(KEYS.users, value),
+
     getCustomers: () => read(KEYS.customers, []),
     saveCustomers: value => write(KEYS.customers, value),
-    nextId: items => items.reduce((max, item) => Math.max(max, Number(item.id) || 0), 0) + 1
+
+    nextId: items => items.reduce(
+      (max, item) => Math.max(max, Number(item.id) || 0), 0
+    ) + 1
   };
 })();
