@@ -22,7 +22,7 @@ Crumb & Co. is a bakery management system developed as part of the IMS566 indivi
 | Role | Username | Password |
 |---|---|---|
 | Admin / Staff | `admin` | `admin1122` |
-| Customer | `safia` | `safia123` |
+| Customer | `aisha` | `aisha000` |
 
 New customers can also register through `register.html` or by selecting **Create an account** on the login page.
 
@@ -76,6 +76,18 @@ bakery-management-system/
     ├── products.js
     ├── orders.js
     └── customers.js
+
+
+## GitHub Repository
+
+The project files are uploaded to GitHub for submission and version control.
+
+To access the project:
+
+1. Open the GitHub repository.
+2. Download or clone the repository to your computer.
+3. Open the project folder using Visual Studio Code.
+4. Run `login.html` using Google Chrome or the Live Server extension.
 
 
 ## Additional Notes
